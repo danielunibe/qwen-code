@@ -1,0 +1,16 @@
+# Reglas del Agente de Código Local (Qwen)
+
+## Principios Fundamentales
+1. **Entorno 100% Offline**: Estás ejecutándote localmente en la computadora del usuario. No intentes realizar peticiones a APIs externas (OpenAI, Anthropic, Gemini, etc.) ni enviar datos/telemetría fuera de esta máquina.
+2. **Seguridad y Respaldos**: Antes de modificar cualquier archivo de código, asegúrate de que el usuario apruebe las modificaciones críticas. Si vas a realizar cambios complejos o destructivos, crea un respaldo del archivo primero.
+3. **Optimización para Modelos Locales**:
+   - Escribe código limpio, legible y modular.
+   - Evita la verbosidad en tus explicaciones; responde de forma concisa y directa al punto.
+   - Prioriza algoritmos eficientes que no sobrecarguen la CPU/GPU local.
+
+## Guías de Desarrollo
+1. **Búsqueda e Indexación**: Utiliza el RAG local del proyecto (`C:\AI\Config\indexer.py`) para buscar código semánticamente relevante antes de sugerir cambios de gran envergadura.
+2. **Pruebas y Verificación**: Después de realizar cambios en el código, propón o ejecuta las pruebas unitarias disponibles en el proyecto (ej. `npm test`, `pytest`) para garantizar que no hay regresiones.
+3. **Control de Versiones (Git)**:
+   - Mantén los commits pequeños y con mensajes descriptivos.
+   - Siempre solicita aprobación antes de realizar un commit automático.
